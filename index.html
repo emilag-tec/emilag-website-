@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emilag | Game Developer & Web Designer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Emilag — Game developer and web designer. Portfolio showcasing games, web projects and available for freelance work." />
+  <meta name="keywords" content="Emilag, game developer, web designer, portfolio, Emi-Jongle, Godot" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title" content="Emilag | Game Developer & Web Designer" />
+  <meta property="og:description" content="Portfolio of Emilag — creator of Emi-Jongle. Available for freelance web & game projects." />
+  <meta property="og:image" content="emilag.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://emilag.github.io" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Emilag",
+    "jobTitle": "Game Developer & Web Designer",
+    "email": "mailto:miracledickson721@gmail.com",
+    "telephone": "+2349030680945",
+    "url": "https://emilag.github.io"
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" role="banner">
+    <div class="overlay" aria-hidden="true"></div>
+
+    <div class="hero-content" role="region" aria-label="Introduction">
+      <img src="emilag.jpg" alt="Portrait of Emilag" class="profile-photo" />
+      <h1>Hi — I'm <span class="accent">Emilag</span></h1>
+      <h2 class="subtitle">Game Developer & Web Designer</h2>
+      <p class="lead">I build immersive digital experiences — from 3D jungle adventures to modern, responsive websites.</p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" href="cv.pdf" download>Download CV</a>
+        <a class="btn outline" href="#hire">Hire Me</a>
+      </div>
+
+      <div class="socials" aria-hidden="false">
+        <a href="tel:+2349030680945" aria-label="Call phone number">📞 +234 903 068 0945</a>
+        <a href="https://wa.me/2348084863226" target="_blank" rel="noopener" aria-label="WhatsApp">💬 WhatsApp</a>
+        <a href="mailto:miracledickson721@gmail.com" aria-label="Send email">✉️ Email</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="projects" class="panel" aria-labelledby="projects-title">
+      <h3 id="projects-title">Projects</h3>
+      <p class="panel-intro">Selected projects showing design, development and creative problem solving.</p>
+      <div class="grid">
+        <article class="card">
+          <h4>Personal Portfolio</h4>
+          <p>Modern responsive portfolio built with HTML & CSS and hosted on GitHub Pages.</p>
+        </article>
+        <article class="card">
+          <h4>Medical Lab Tools (Concept)</h4>
+          <p>Prototype for a medical lab tool to help manage tests and results for diagnostics.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="games" class="panel" aria-labelledby="games-title">
+      <h3 id="games-title">Games</h3>
+      <p class="panel-intro">Interactive and playable projects made with Godot.</p>
+      <div class="grid">
+        <article class="card">
+          <h4>Emi-Jongle</h4>
+          <p>3D jungle survival — find the key before the eagle arrives. Built in Godot 4.4.</p>
+          <a class="small-link" href="#contact">Hire me to build a game like this</a>
+        </article>
+        <article class="card">
+          <h4>Game Prototype</h4>
+          <p>Mechanics prototypes and level design experiments under development.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="hire" class="panel highlight" aria-labelledby="hire-title">
+      <h3 id="hire-title">Work With Me</h3>
+      <p class="panel-intro">Need a website or a game? I offer freelance services — design, development, and deployment.</p>
+      <a class="btn primary" href="#contact">Contact / Hire Me</a>
+    </section>
+
+    <section id="contact" class="panel" aria-labelledby="contact-title">
+      <h3 id="contact-title">Contact</h3>
+      <p class="panel-intro">Send me a message, or use phone/WhatsApp/email below.</p>
+
+      <!-- Contact form: builds a mailto: (client-side) to open user's email app -->
+      <form id="contactForm" class="contact-form" onsubmit="return sendEmail(event)">
+        <label>
+          <span class="label-text">Your name</span>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </label>
+
+        <label>
+          <span class="label-text">Your email</span>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </label>
+
+        <label>
+          <span class="label-text">Message</span>
+          <textarea id="message" name="message" rows="5" placeholder="Describe your project or question" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send message</button>
+          <button type="reset" class="btn outline">Reset</button>
+        </div>
+        <p class="form-note">Or contact directly: <a href="tel:+2349030680945">+234 903 068 0945</a> • <a href="https://wa.me/2348084863226" target="_blank" rel="noopener">WhatsApp</a> • <a href="mailto:miracledickson721@gmail.com">miracledickson721@gmail.com</a></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Emilag — Game Developer & Web Designer</p>
+    <a class="tiny" href="#top">▲ Back to top</a>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const panels = document.querySelectorAll('.panel');
+    const reveal = () => {
+      const trigger = window.innerHeight * 0.85;
+      panels.forEach(p => {
+        const rect = p.getBoundingClientRect();
+        if (rect.top < trigger) p.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+
+    // Contact form: open user's email client with prefilled message
+    function sendEmail(e) {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const message = encodeURIComponent(document.getElementById('message').value.trim());
+      const subject = encodeURIComponent('Website inquiry from ' + name);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const mailto = `mailto:miracledickson721@gmail.com?subject=${subject}&body=${body}`;
+      // open mail client
+      window.location.href = mailto;
+      return false;
+    }
+  </script>
+</body>
+</html>
